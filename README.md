@@ -1,4 +1,4 @@
-# Hatalogico
+###Hatalogico
 Libraries for the Hatalogico Raspberry Pi Hat
 
 All the python files required to drive the I2C chips on the Hatalogico were written and are maintained by [Adafruit Industries](https://www.adafruit.com/). I have simply included them as submodules and written a few examples using them.
@@ -10,17 +10,14 @@ Before using these files, you need to setup your Pi for GPIO and I2C (note the P
 [Setting up the GPIO](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-gpio)
 
 
-The (fixed) I2C addresses on the prototype model are:
+###I2C addresses
+(on the prototype model)
 
-*16 Channel PWM: 0x70*
-
-*4 Channel ADC #1: 0x49*
-
-*4 Channel ADC #2: 0x48*
-
-*Single Channel DAC #1: 0x60*
-
-*Single Channel DAC #2: 0x61*
+1. 16 Channel PWM: **0x70**
+2. 4 Channel ADC #1: **0x49**
+3. 4 Channel ADC #2: **0x48**
+4. Single Channel DAC #1: **0x60**
+5. Single Channel DAC #2: **0x61**
 
 
-**Big thanks to Adafruit without whom the Hatalogico would just be a mug coaster.**
+###Big thanks to Adafruit without whom the Hatalogico would just be a mug coaster.
