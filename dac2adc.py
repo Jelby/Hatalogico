@@ -1,5 +1,12 @@
 #!/usr/bin/python
 
+# ===========================================================================
+# Hatalogico DAC to ADC Test - powered by Adafruit's Libraries
+# -------------------------------------------------
+# Date: 22/3/2015
+# Stolen By: John Lumley
+# ===========================================================================
+
 import time, os, signal, sys
 
 # INCLUDE THE ADC DRIVER
@@ -14,10 +21,6 @@ os.chdir(scriptPath)
 sys.path.append("Adafruit/Adafruit_MCP4725")
 from Adafruit_MCP4725 import MCP4725
 
-# ===========================================================================
-# Hatalogico core - powered by Adafruit's Libraries
-# ===========================================================================
-
 # Select the gain
 # gain = 6144  # +/- 6.144V
 gain = 4096  # +/- 4.096V
@@ -30,9 +33,9 @@ gain = 4096  # +/- 4.096V
 # sps = 8    # 8 samples per second
 # sps = 16   # 16 samples per second
 # sps = 32   # 32 samples per second
-sps = 64   # 64 samples per second
+# sps = 64   # 64 samples per second
 # sps = 128  # 128 samples per second
-# sps = 250  # 250 samples per second
+sps = 250  # 250 samples per second
 # sps = 475  # 475 samples per second
 # sps = 860  # 860 samples per second
 
@@ -76,12 +79,16 @@ DAC2_7Bit = \
 ADS1015 = 0x00
 
 # FIRE UP THE ADCS
-adc1 = ADS1x15(address=0x48, ic=ADS1015)
-adc2 = ADS1x15(address=0x49, ic=ADS1015)
+adc1 = ADS1x15(address=0x49, ic=ADS1015)
+adc2 = ADS1x15(address=0x48, ic=ADS1015)
 
 # FIRE UP THE DACS
 dac1 = MCP4725(0x60)
 dac2 = MCP4725(0x61)
+
+# NAP TIMINGS
+nap1 = 2
+nap2 = 3
 
 while (True):
 	# LOOP THROUGH THE ZIPPED ARRAYS
@@ -93,7 +100,7 @@ while (True):
 
 		print "DAC1 = %.0f" % (voltage1)
 		print "DAC2 = %.0f" % (voltage2)
-		time.sleep(2)
+		time.sleep(nap1)
 
 		# READ ALL 4 VALUES FROM FIRST ADC
 		reading1a = adc1.readADCSingleEnded(0, gain, sps) / 1000
@@ -107,9 +114,9 @@ while (True):
 		reading2c = adc2.readADCSingleEnded(2, gain, sps) / 1000
 		reading2d = adc2.readADCSingleEnded(3, gain, sps) / 1000
 		
-		print "ADC1: a = %.3f" % (reading1a) + " b = %.3f" % (reading1b) + " c = %.3f" % (reading1c) + " d = %.3f" % (reading1d)
-		print "ADC2: a = %.3f" % (reading2a) + " b = %.3f" % (reading2b) + " c = %.3f" % (reading2c) + " d = %.3f" % (reading2d)
+		print "ADC1: %.3f" % (reading1a) + " %.3f" % (reading1b) + " %.3f" % (reading1c) + " %.3f" % (reading1d)
+		print "ADC2: %.3f" % (reading2a) + " %.3f" % (reading2b) + " %.3f" % (reading2c) + " %.3f" % (reading2d)
 		print "-------------------------------------------------------------"
 		
 		# HAVE A LITTLE NAP
-		time.sleep(3)
+		time.sleep(nap2)
