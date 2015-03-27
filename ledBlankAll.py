@@ -5,6 +5,8 @@
 # -------------------------------------------------
 # Date: 24/3/2015
 # Stolen By: John Lumley
+#
+# BIG THANKS TO ADAFRUIT INDUSTRIES FOR MAKING THIS POSSIBLE AND EASY
 # ===========================================================================
 
 import os, sys

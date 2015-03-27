@@ -5,6 +5,8 @@
 # -------------------------------------------------
 # Date: 24/3/2015
 # Stolen By: John Lumley
+#
+# BIG THANKS TO ADAFRUIT INDUSTRIES FOR MAKING THIS POSSIBLE AND EASY
 # ===========================================================================
 
 import os, sys
@@ -22,7 +24,7 @@ from Adafruit_PWM_Servo_Driver import PWM
 # EACH CHANNEL RANGES FROM 0 (off) TO 4095 (on)
 pwm = PWM(0x70)
 # SET FREQUENCY
-pwm.setPWMFreq(120)
+pwm.setPWMFreq(1400)
 # DEFINE STEP BETWEEN VALUES WHEN RAMPING UP (to 4095) AND DOWN (to 0)
 stepChange = 8
 
