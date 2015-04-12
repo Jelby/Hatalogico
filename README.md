@@ -39,9 +39,9 @@ Also add a new line underneath 'i2c-dev':
 Crtl-X to close, pressing Y to save the changes (overwrite with the same name by pressing enter)
 
 
-For the RPi B+ or older you will need to update the blacklist file:
+###For the RPi B+ or older you will need to update the blacklist file:
 
-#sudo nano /etc/modprobe.d/raspi-blacklist.conf
+**sudo nano /etc/modprobe.d/raspi-blacklist.conf**
 
 Update it to read:
 
