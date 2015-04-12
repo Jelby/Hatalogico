@@ -33,4 +33,4 @@ while (True):
 		pwm.setPWM(pwmPin, 0, pwmValue)
 
 		# HAVE A LITTLE NAP
-		#time.sleep(0.01)
+		time.sleep(0.1)
