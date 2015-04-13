@@ -51,6 +51,9 @@ position9 = [ BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_6, BRIGHT
 position10 = [ BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_6, BRIGHT_STEP_5, BRIGHT_STEP_4, BRIGHT_STEP_3]
 position11 = [ BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_6, BRIGHT_STEP_5, BRIGHT_STEP_4]
 position12 = [ BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_6, BRIGHT_STEP_5]
+position13 = [ BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_6]
+position14 = [ BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7]
+position15 = [ BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7, BRIGHT_STEP_7]
 
 # SETUP THE PWM DRIVER (I2C ADDRESS IS 70 BY DEFAULT ON HATALOGICO)
 # EACH CHANNEL RANGES FROM 0 (off) TO 4095 (on)
@@ -60,7 +63,7 @@ pwm.setPWMFreq(120)
 
 while (True):
 	# LOOP THROUGH ZIPPED ARRAYS AND SET EACH VALUE FOR THE 16 PWM OUTS
-	for p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12 in zip(position0, position1, position2, position3, position4, position5, position6, position7, position8, position9, position10, position11, position12):
+	for p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15 in zip(position0, position1, position2, position3, position4, position5, position6, position7, position8, position9, position10, position11, position12, position13, position14, position15):
 		pwm.setPWM(LED_PIN_0, 0, p0)
 		pwm.setPWM(LED_PIN_1, 0, p1)
 		pwm.setPWM(LED_PIN_2, 0, p2)
@@ -73,7 +76,7 @@ while (True):
 		# HAVE A LITTLE NAP
 		time.sleep(0.1)
 
-	for p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12 in reversed(zip(position0, position1, position2, position3, position4, position5, position6, position7, position8, position9, position10, position11, position12)):
+	for p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15 in reversed(zip(position0, position1, position2, position3, position4, position5, position6, position7, position8, position9, position10, position11, position12, position13, position14, position15):
 		pwm.setPWM(LED_PIN_0, 0, p0)
 		pwm.setPWM(LED_PIN_1, 0, p1)
 		pwm.setPWM(LED_PIN_2, 0, p2)
