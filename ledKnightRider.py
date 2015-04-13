@@ -66,7 +66,7 @@ while (True):
 		pwm.setPWM(LED_PIN_7, 0, p7)
 		
 		# HAVE A LITTLE NAP
-		time.sleep(0.01)
+		time.sleep(0.1)
 
 	for p0, p1, p2, p3, p4, p5, p6, p7 in reversed(zip(position0, position1, position2, position3, position4, position5, position6, position7)):
 		pwm.setPWM(LED_PIN_0, 0, p0)
@@ -79,4 +79,4 @@ while (True):
 		pwm.setPWM(LED_PIN_7, 0, p7)
 		
 		# HAVE A LITTLE NAP
-		time.sleep(0.01)
+		time.sleep(0.1)
