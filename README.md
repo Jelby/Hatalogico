@@ -39,11 +39,12 @@ Update it to read:
 \#blacklist i2c-bcm2708
 
 After all of this, it's wise to do a little housekeeping (perhaps even removing some unused libraries):  
-**sudo apt-get -y update**  
-**sudo apt-get -y dist-upgrade**  
-**sudo apt-get -y purge wolfram-engine**   
+**sudo apt-get -y purge wolfram-engine**  
 **sudo apt-get -y autoremove**  
 **sudo apt-get -y clean**  
+**sudo apt-get -y update**  
+**sudo apt-get -y dist-upgrade**  
+
 #I2C Addresses
 (on the prototype model)
 
