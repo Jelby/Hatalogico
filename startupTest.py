@@ -8,7 +8,7 @@
 #
 # Use sudo crontab -e to launch the cron task manager
 # Add a new line with the following (replace path to suit your machine):
-# @reboot ~/Hatalogico/startupTest.py
+# @reboot /home/Hatalogico/startupTest.py
 # ===========================================================================
 
 import subprocess, sys, os, time
@@ -17,7 +17,7 @@ import subprocess, sys, os, time
 sleepTimeout = 10
 
 # CHANGE THIS VALUE TO MATCH YOUR LOCAL MACHINE
-pathToHere = '~/Hatalogico/'
+pathToHere = '/home/Hatalogico/'
 
 # LAUNCH THE FIRST FILE USING POPEN
 oneByOne = subprocess.Popen([sys.executable, pathToHere + "led1by1.py"])
