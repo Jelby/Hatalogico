@@ -72,7 +72,7 @@ while (True):
 		# HAVE A LITTLE NAP
 		time.sleep(0.1)
 
-	for p0, p1, p2, p3, p4, p5, p6, p7 in zip(turnaround0, turnaournd1):
+	for p0, p1, p2, p3, p4, p5, p6, p7 in zip(turnaround0, turnaround1):
 		pwm.setPWM(LED_PIN_0, 0, p0)
 		pwm.setPWM(LED_PIN_1, 0, p1)
 		pwm.setPWM(LED_PIN_2, 0, p2)
