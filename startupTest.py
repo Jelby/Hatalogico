@@ -19,10 +19,6 @@ sleepTimeout = 20
 # CHANGE THIS VALUE TO MATCH YOUR LOCAL MACHINE
 pathToHere = '/home/pi/Hatalogico/'
 
-# LAUNCH THE FIRST FILE USING POPEN
-flashAll = subprocess.Popen([sys.executable, pathToHere + "ledFlash.py"])
-# WAIT FOR IT TO FINISH BEFORE MOVING ON - note: you can use std pipes here if needed
-flashAll.communicate()
 
 # LAUNCH THE SECOND FILE
 ledPulses = subprocess.Popen([sys.executable, pathToHere + "ledKnightRider.py"])
@@ -32,9 +28,9 @@ time.sleep(sleepTimeout);
 ledPulses.kill()
 
 # LAUNCH THE BLANKING FILE USING POPEN
-blankAll = subprocess.Popen([sys.executable, pathToHere + "ledBlankAll.py"])
+flashAll = subprocess.Popen([sys.executable, pathToHere + "ledBlankAll.py"])
 # WAIT FOR IT TO FINISH BEFORE MOVING ON
-blankAll.communicate()
+flashAll.communicate()
 
 # LAUNCH THE FLASH FILE USING POPEN
 blankAll = subprocess.Popen([sys.executable, pathToHere + "ledFlash.py"])
