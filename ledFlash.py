@@ -34,12 +34,12 @@ for currentFlash in range(0, flashCount):
 	# LOOP THROUGH THE 16 PINS - note: range goes up to but does not include the 2nd parameter
 	for pwmPin in range(0, 16):
 		# TURN IT ON
-		pwm.setPWM(pwmPin, 0, 4095)
+		pwm.setPWM(pwmPin, 0, 0)
 
 	time.sleep(flashTime)
 
 	for pwmPin in range(0, 16):
 		# TURN IT ON
-		pwm.setPWM(pwmPin, 0, 0)
+		pwm.setPWM(pwmPin, 4096, 0)
 
 	time.sleep(flashTime)
