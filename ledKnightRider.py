@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # ===========================================================================
-# Hatalogico KNIGHT RIDER for LEDs - powered by Adafruit's Libraries
+# Hatalogico KNIGHT RIDER for 8 LEDs - powered by Adafruit's Libraries
 # -------------------------------------------------
 # Date: 12/4/2015
 # Author: John Lumley
