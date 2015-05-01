@@ -25,14 +25,10 @@ sys.path.append("Adafruit/Adafruit_ADS1x15")
 from Adafruit_ADS1x15 import ADS1x15
 
 
-
-forwardMin = 1
-forwardMax = 10
 fMotorMin = 1500
 fMotorMax = 4095
 
-backwardMin = 1
-backwardMax = 10
+
 bMotorMin = 2500
 bMotorMax = 4095
 
@@ -65,7 +61,9 @@ def goBackward(speedReq):
 	pwm.setPWM(1, 0, 0)
 	pwm.setPWM(0, 0, speedReq)
 
+# WORK IN PROGRESS
 while (True):
+	# DRIVE A SINGLE MOTOR BASED ON A POT CONNECTED TO ANALOGUE IN 1
 	reading1a = int(adc1.readADCSingleEnded(0, gain, sps))
 
 	if(reading1a > 2048):
